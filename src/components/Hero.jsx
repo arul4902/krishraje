@@ -148,14 +148,14 @@ export default function Hero({ onOpenBooking }) {
             </div>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
+            <div className="hero-action-buttons">
               <button
                 onClick={onOpenBooking}
                 className="btn btn-primary"
-                style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}
+                style={{ padding: '0.95rem 1.8rem', fontSize: '0.96rem' }}
               >
                 <Sparkles size={18} />
-                Check Date Availability
+                <span>Check Date Availability</span>
               </button>
 
               <a
@@ -255,18 +255,19 @@ export default function Hero({ onOpenBooking }) {
                 <div
                   style={{
                     position: 'absolute',
-                    bottom: '1.25rem',
-                    left: '1.25rem',
-                    right: '1.25rem',
-                    background: 'rgba(26, 7, 14, 0.88)',
+                    bottom: '1rem',
+                    left: '1rem',
+                    right: '1rem',
+                    background: 'rgba(26, 7, 14, 0.92)',
                     backdropFilter: 'blur(12px)',
                     border: '1px solid var(--border-gold)',
                     borderRadius: 'var(--radius-md)',
-                    padding: '0.85rem 1.15rem',
+                    padding: '0.75rem 1rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    gap: '0.8rem'
+                    flexWrap: 'wrap',
+                    gap: '0.6rem'
                   }}
                 >
                   <div>
@@ -307,27 +308,9 @@ export default function Hero({ onOpenBooking }) {
             </div>
 
             {/* Corner Decorative Ribbon / Badge */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-18px',
-                left: '-18px',
-                background: 'var(--gold-gradient)',
-                color: '#140609',
-                padding: '0.65rem 1.1rem',
-                borderRadius: 'var(--radius-md)',
-                boxShadow: 'var(--shadow-glow)',
-                fontWeight: 800,
-                fontSize: '0.82rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                letterSpacing: '0.04em',
-                zIndex: 20
-              }}
-            >
+            <div className="hero-cert-badge">
               <Award size={16} />
-              ISO & Central Govt Certified
+              <span>ISO & Central Govt Certified</span>
             </div>
           </div>
         </div>

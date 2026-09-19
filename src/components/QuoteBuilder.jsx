@@ -155,7 +155,7 @@ export default function QuoteBuilder({ preSelectedService }) {
                 </div>
 
                 {/* Your Name & Contact */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className="form-grid-2">
                   <div className="form-group">
                     <label htmlFor={nameInputId} className="form-label">Your Name</label>
                     <input
@@ -322,21 +322,22 @@ export default function QuoteBuilder({ preSelectedService }) {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--gold-light)' }}>
+                  <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--gold-light)', display: 'block', marginBottom: '0.2rem' }}>
                     Estimated Investment
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                    <span
+                  <div>
+                    <div
                       style={{
                         fontFamily: 'var(--font-serif)',
-                        fontSize: '2.4rem',
+                        fontSize: 'clamp(1.8rem, 5vw, 2.4rem)',
                         fontWeight: 800,
-                        color: 'var(--text-primary)'
+                        color: 'var(--text-primary)',
+                        lineHeight: 1.15
                       }}
                     >
                       ₹{estimatedTotal.toLocaleString('en-IN')}
-                    </span>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                    </div>
+                    <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', display: 'block', marginTop: '0.25rem' }}>
                       (Includes HD makeup, styling & draping)
                     </span>
                   </div>
@@ -347,13 +348,15 @@ export default function QuoteBuilder({ preSelectedService }) {
                   type="submit"
                   className="btn btn-whatsapp"
                   style={{
-                    padding: '0.95rem 2.2rem',
-                    fontSize: '1rem',
-                    boxShadow: '0 6px 24px rgba(37, 211, 102, 0.4)'
+                    padding: '0.9rem 1.8rem',
+                    fontSize: '0.96rem',
+                    boxShadow: '0 6px 24px rgba(37, 211, 102, 0.4)',
+                    width: '100%',
+                    maxWidth: '380px'
                   }}
                 >
                   <MessageCircle size={19} />
-                  Send to Raje AR on WhatsApp
+                  <span>Send to Raje AR on WhatsApp</span>
                 </button>
               </div>
 

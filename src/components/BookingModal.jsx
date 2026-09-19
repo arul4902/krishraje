@@ -67,82 +67,55 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
   };
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 3000,
-        background: 'rgba(8, 2, 4, 0.92)',
-        backdropFilter: 'blur(16px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1.25rem',
-        animation: 'fadeIn 0.2s ease'
-      }}
-      onClick={onClose}
-    >
-      <div
-        style={{
-          position: 'relative',
-          maxWidth: '520px',
-          width: '100%',
-          background: 'var(--bg-surface)',
-          border: '1px solid var(--border-gold-bright)',
-          borderRadius: '24px',
-          padding: '2rem',
-          boxShadow: 'var(--shadow-lg)',
-          maxHeight: '90vh',
-          overflowY: 'auto'
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close booking modal"
           style={{
             position: 'absolute',
-            top: '1.25rem',
-            right: '1.25rem',
-            width: '36px',
-            height: '36px',
+            top: '1rem',
+            right: '1rem',
+            width: '38px',
+            height: '38px',
             borderRadius: '50%',
-            background: 'rgba(255,255,255,0.06)',
+            background: 'rgba(255,255,255,0.08)',
             border: '1px solid var(--border-gold)',
             color: 'var(--text-secondary)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            zIndex: 10
           }}
         >
           <X size={18} />
         </button>
 
         {/* Modal Header */}
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ marginBottom: '1.25rem', paddingRight: '2rem' }}>
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.4rem',
               color: 'var(--gold-light)',
-              fontSize: '0.78rem',
+              fontSize: '0.74rem',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              marginBottom: '0.4rem'
+              marginBottom: '0.3rem'
             }}
           >
             <Sparkles size={13} color="var(--gold-primary)" />
             Direct Artist Enquiry
           </div>
-          <h3 style={{ fontSize: '1.45rem', color: 'var(--text-primary)', lineHeight: 1.25 }}>
+          <h3 style={{ fontSize: 'clamp(1.2rem, 3.5vw, 1.45rem)', color: 'var(--text-primary)', lineHeight: 1.3 }}>
             Check Date Availability
           </h3>
-          <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
-            Connect with <strong>Raje AR</strong>. Packages from ₹6,999. Receive a direct reply on WhatsApp.
+          <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '0.3rem', lineHeight: 1.45 }}>
+            Connect with <strong>Raje AR</strong>. Packages from ₹6,999. Fast WhatsApp confirmation.
           </p>
         </div>
 
@@ -164,7 +137,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
             </select>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
+          <div className="form-grid-2">
             <div className="form-group">
               <label htmlFor={modalNameId} className="form-label">Your Name</label>
               <input
@@ -184,14 +157,14 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
                 id={modalPhoneId}
                 type="tel"
                 className="form-input"
-                placeholder="Mobile Number"
+                placeholder="e.g. 98765 43210"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
+          <div className="form-grid-2">
             <div className="form-group">
               <label htmlFor={modalDateId} className="form-label">Event Date</label>
               <input
@@ -223,30 +196,30 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
               id={modalNotesId}
               className="form-textarea"
               rows={2}
-              placeholder="e.g. Early morning Muhurtham, saree pre-pleating needed"
+              placeholder="e.g. Early morning Muhurtham timing, saree pre-pleating"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
             />
           </div>
 
           {/* Submit Actions */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1.25rem' }}>
             <button
               type="submit"
               className="btn btn-whatsapp"
-              style={{ width: '100%', justifyContent: 'center', padding: '0.9rem 1.5rem' }}
+              style={{ width: '100%', justifyContent: 'center', padding: '0.85rem 1.25rem', fontSize: '0.92rem' }}
             >
               <MessageCircle size={18} />
-              Send Enquiry via WhatsApp (+91 73588 53560)
+              <span>Send Enquiry via WhatsApp</span>
             </button>
 
             <a
               href={`tel:${BUSINESS_INFO.phone}`}
               className="btn btn-secondary"
-              style={{ width: '100%', justifyContent: 'center', padding: '0.85rem 1.5rem' }}
+              style={{ width: '100%', justifyContent: 'center', padding: '0.8rem 1.25rem', fontSize: '0.88rem' }}
             >
-              <Phone size={16} color="var(--gold-primary)" />
-              Direct Call: {BUSINESS_INFO.phoneFormatted}
+              <Phone size={15} color="var(--gold-primary)" />
+              <span>Call: {BUSINESS_INFO.phoneFormatted}</span>
             </a>
           </div>
         </form>

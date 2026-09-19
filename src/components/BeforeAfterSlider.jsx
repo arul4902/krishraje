@@ -136,18 +136,20 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
               <div
                 style={{
                   position: 'absolute',
-                  top: '1rem',
-                  left: '1rem',
-                  background: 'rgba(15, 4, 7, 0.85)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  top: '0.75rem',
+                  left: '0.75rem',
+                  background: 'rgba(15, 4, 7, 0.88)',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
                   color: 'var(--text-secondary)',
-                  padding: '0.4rem 0.85rem',
+                  padding: '0.3rem 0.65rem',
                   borderRadius: 'var(--radius-full)',
-                  fontSize: '0.78rem',
+                  fontSize: '0.72rem',
                   fontWeight: 700,
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.06em',
                   textTransform: 'uppercase',
-                  backdropFilter: 'blur(8px)'
+                  backdropFilter: 'blur(8px)',
+                  pointerEvents: 'none',
+                  whiteSpace: 'nowrap'
                 }}
               >
                 Natural Prep
@@ -158,22 +160,24 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
             <div
               style={{
                 position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                background: 'rgba(148, 23, 46, 0.88)',
+                top: '0.75rem',
+                right: '0.75rem',
+                background: 'rgba(148, 23, 46, 0.92)',
                 border: '1px solid var(--border-gold-bright)',
                 color: 'var(--gold-light)',
-                padding: '0.4rem 0.85rem',
+                padding: '0.3rem 0.65rem',
                 borderRadius: 'var(--radius-full)',
-                fontSize: '0.78rem',
+                fontSize: '0.72rem',
                 fontWeight: 700,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 backdropFilter: 'blur(8px)',
-                boxShadow: 'var(--shadow-sm)'
+                boxShadow: 'var(--shadow-sm)',
+                pointerEvents: 'none',
+                whiteSpace: 'nowrap'
               }}
             >
-              ✨ HD Muhurtham Glow
+              ✨ HD Bridal Glow
             </div>
 
             {/* Draggable Divider Handle */}

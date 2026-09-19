@@ -56,8 +56,8 @@ export default function Navbar({ onOpenBooking }) {
           style={{
             background: 'linear-gradient(90deg, #1A070E 0%, #2D0B12 50%, #1A070E 100%)',
             borderBottom: '1px solid rgba(212, 175, 55, 0.25)',
-            padding: '0.4rem 1rem',
-            fontSize: '0.78rem',
+            padding: '0.35rem 1rem',
+            fontSize: '0.76rem',
             color: 'var(--text-secondary)'
           }}
         >
@@ -67,45 +67,38 @@ export default function Navbar({ onOpenBooking }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: '1rem',
-              flexWrap: 'wrap'
+              gap: '0.5rem'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', overflow: 'hidden', whiteSpace: 'nowrap' }}>
               <span
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.3rem',
                   color: 'var(--gold-light)',
-                  fontWeight: 600
+                  fontWeight: 600,
+                  fontSize: '0.74rem'
                 }}
               >
                 <Award size={13} color="var(--gold-primary)" />
-                ISO & Central Govt Certified Artist
-              </span>
-              <span style={{ color: 'rgba(212, 175, 55, 0.4)', display: 'none', mdDisplay: 'inline' }}>|</span>
-              <span style={{ display: 'none', mdDisplay: 'inline', color: 'var(--text-muted)' }}>
-                Trichy & Manachanallur • Starting ₹6,999
+                ISO & Govt Certified Artist
               </span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0 }}>
               <a
                 href={BUSINESS_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="desktop-nav"
                 style={{
-                  display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.35rem',
                   color: 'var(--text-secondary)',
                   textDecoration: 'none',
-                  fontSize: '0.78rem',
-                  transition: 'color 0.2s'
+                  fontSize: '0.76rem'
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold-light)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
               >
                 <InstagramIcon size={13} color="var(--gold-primary)" />
                 {BUSINESS_INFO.instagramHandle}
@@ -115,15 +108,15 @@ export default function Navbar({ onOpenBooking }) {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.35rem',
+                  gap: '0.3rem',
                   color: 'var(--gold-light)',
                   textDecoration: 'none',
                   fontWeight: 600,
-                  fontSize: '0.78rem'
+                  fontSize: '0.74rem'
                 }}
               >
-                <Phone size={13} color="var(--gold-primary)" />
-                {BUSINESS_INFO.phoneFormatted}
+                <Phone size={12} color="var(--gold-primary)" />
+                <span>{BUSINESS_INFO.phoneFormatted}</span>
               </a>
             </div>
           </div>
